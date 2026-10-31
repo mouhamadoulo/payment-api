@@ -61,7 +61,7 @@ public class Payment {
 
     private LocalDateTime updatedAt;
 
-    protected Payment() {
+    public Payment() {
     }
 
     @PrePersist
