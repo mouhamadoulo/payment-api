@@ -1,6 +1,7 @@
 package com.molo.payment_api.service;
 
 import com.molo.payment_api.dto.request.CreatePaymentRequest;
+import com.molo.payment_api.dto.request.PaymentSearchCriteria;
 import com.molo.payment_api.dto.request.UpdatePaymentRequest;
 import com.molo.payment_api.dto.request.UpdatePaymentStatusRequest;
 import com.molo.payment_api.dto.response.PaymentResponse;
@@ -9,6 +10,7 @@ import com.molo.payment_api.exception.DuplicatePaymentReferenceException;
 import com.molo.payment_api.exception.PaymentNotFoundException;
 import com.molo.payment_api.mapper.PaymentMapper;
 import com.molo.payment_api.repository.PaymentRepository;
+import com.molo.payment_api.specification.PaymentSpecification;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -113,4 +115,56 @@ public class PaymentService {
         return repository.findById(id)
                 .orElseThrow(() -> new PaymentNotFoundException(id));
     }
+
+    @Transactional(readOnly = true)
+    public Page<PaymentResponse> search(
+            PaymentSearchCriteria criteria,
+            Pageable pageable) {
+
+        //vérification que les montants ne sont pas négatifs
+        if (criteria.minAmount() != null
+                && criteria.minAmount().signum() < 0) {
+
+            throw new IllegalArgumentException(
+                    "minAmount cannot be negative"
+            );
+        }
+
+        if (criteria.maxAmount() != null
+                && criteria.maxAmount().signum() < 0) {
+
+            throw new IllegalArgumentException(
+                    "maxAmount cannot be negative"
+            );
+        }
+
+        // Vérification de cohérence des critères
+        if (criteria.minAmount() != null
+                && criteria.maxAmount() != null
+                && criteria.minAmount()
+                .compareTo(criteria.maxAmount()) > 0) {
+
+            throw new IllegalArgumentException(
+                    "minAmount cannot be greater than maxAmount"
+            );
+        }
+
+        if (criteria.startDate() != null
+                && criteria.endDate() != null
+                && criteria.startDate().isAfter(criteria.endDate())) {
+
+            throw new IllegalArgumentException(
+                    "startDate cannot be after endDate"
+            );
+        }
+
+        // Construction de la Specification
+        var specification =
+                PaymentSpecification.withFilters(criteria);
+
+        // Exécution de la recherche
+        return repository.findAll(specification, pageable)
+                .map(mapper::toResponse);
+    }
+
 }
