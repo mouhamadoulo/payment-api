@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Le coeur de notre application
+ * Le coeur de notre application - La logique métier
  */
 @Service
 @Transactional
