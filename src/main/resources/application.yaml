@@ -33,3 +33,8 @@ management:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: 900000 #correspond à 15 minutes en millisecondes

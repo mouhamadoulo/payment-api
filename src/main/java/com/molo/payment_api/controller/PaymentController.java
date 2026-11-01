@@ -16,6 +16,7 @@ import org.springframework.data.domain.Sort;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -118,7 +119,8 @@ public class PaymentController {
         );
     }
 
-    // DELETE
+    // DELETE , Seuls les administrateurs peuvent supprimer
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(
             @PathVariable Long id) {
