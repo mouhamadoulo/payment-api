@@ -56,6 +56,7 @@ public class Payment {
     @Setter
     private String description;
 
+    @Setter
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
