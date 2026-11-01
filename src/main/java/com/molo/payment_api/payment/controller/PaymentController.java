@@ -1,12 +1,12 @@
-package com.molo.payment_api.controller;
+package com.molo.payment_api.payment.controller;
 
-import com.molo.payment_api.dto.request.CreatePaymentRequest;
-import com.molo.payment_api.dto.request.PaymentSearchCriteria;
-import com.molo.payment_api.dto.request.UpdatePaymentRequest;
-import com.molo.payment_api.dto.request.UpdatePaymentStatusRequest;
-import com.molo.payment_api.dto.response.PaymentResponse;
-import com.molo.payment_api.enums.PaymentStatus;
-import com.molo.payment_api.service.PaymentService;
+import com.molo.payment_api.payment.dto.request.CreatePaymentRequest;
+import com.molo.payment_api.payment.dto.request.PaymentSearchCriteria;
+import com.molo.payment_api.payment.dto.request.UpdatePaymentRequest;
+import com.molo.payment_api.payment.dto.request.UpdatePaymentStatusRequest;
+import com.molo.payment_api.payment.dto.response.PaymentResponse;
+import com.molo.payment_api.payment.enums.PaymentStatus;
+import com.molo.payment_api.payment.service.PaymentService;
 import jakarta.validation.Valid;
 
 import org.springframework.data.domain.Page;

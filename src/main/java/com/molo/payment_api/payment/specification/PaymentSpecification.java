@@ -1,8 +1,8 @@
-package com.molo.payment_api.specification;
+package com.molo.payment_api.payment.specification;
 
-import com.molo.payment_api.dto.request.PaymentSearchCriteria;
-import com.molo.payment_api.entity.Payment;
-import com.molo.payment_api.enums.PaymentStatus;
+import com.molo.payment_api.payment.dto.request.PaymentSearchCriteria;
+import com.molo.payment_api.payment.entity.Payment;
+import com.molo.payment_api.payment.enums.PaymentStatus;
 import jakarta.persistence.criteria.Predicate;
 
 import org.springframework.data.jpa.domain.Specification;

@@ -1,4 +1,4 @@
-package com.molo.payment_api.exception;
+package com.molo.payment_api.payment.exception;
 
 public class DuplicatePaymentReferenceException extends RuntimeException {
 

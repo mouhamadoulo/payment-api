@@ -1,10 +1,15 @@
-package com.molo.payment_api.dto.request;
+package com.molo.payment_api.payment.dto.request;
 
 import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 
-//DTO utilisé lors de la modification d'un paiement
-public record UpdatePaymentRequest(
+//DTO utilisé lors de la création d'un paiement
+//Les annotations de validation permettent de contrôler les données entrantes
+public record CreatePaymentRequest(
+
+        @NotBlank
+        @Size(max = 50)
+        String reference,
 
         @NotBlank
         @Pattern(regexp = "[A-Z]{2}[A-Z0-9]{13,32}")
@@ -27,3 +32,4 @@ public record UpdatePaymentRequest(
         String description
 
 ) {}
+

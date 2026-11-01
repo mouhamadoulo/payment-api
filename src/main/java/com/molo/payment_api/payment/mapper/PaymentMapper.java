@@ -1,9 +1,9 @@
-package com.molo.payment_api.mapper;
+package com.molo.payment_api.payment.mapper;
 
-import com.molo.payment_api.dto.request.CreatePaymentRequest;
-import com.molo.payment_api.dto.response.PaymentResponse;
-import com.molo.payment_api.entity.Payment;
-import com.molo.payment_api.enums.PaymentStatus;
+import com.molo.payment_api.payment.dto.request.CreatePaymentRequest;
+import com.molo.payment_api.payment.dto.response.PaymentResponse;
+import com.molo.payment_api.payment.entity.Payment;
+import com.molo.payment_api.payment.enums.PaymentStatus;
 import org.springframework.stereotype.Component;
 
 //Classe de transformation d'un DTO request en Entité Payment

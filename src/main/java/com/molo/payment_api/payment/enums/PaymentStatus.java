@@ -1,4 +1,4 @@
-package com.molo.payment_api.enums;
+package com.molo.payment_api.payment.enums;
 
 public enum PaymentStatus {
     PENDING,

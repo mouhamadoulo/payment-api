@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
  * - `unique = true` empêche deux utilisateurs d'avoir la même adresse email.
  * - Le mot de passe sera stocké sous forme de hash BCrypt, jamais en clair.
  */
-
 @Entity
 @Table(name = "app_users")
 public class User {

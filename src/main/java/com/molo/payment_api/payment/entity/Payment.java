@@ -1,6 +1,6 @@
-package com.molo.payment_api.entity;
+package com.molo.payment_api.payment.entity;
 
-import com.molo.payment_api.enums.PaymentStatus;
+import com.molo.payment_api.payment.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.molo.payment_api.exception;
+package com.molo.payment_api.payment.exception;
 
 /**
  * Une bonne API REST doit retourner des erreurs cohérentes, compréhensibles et normalisées.

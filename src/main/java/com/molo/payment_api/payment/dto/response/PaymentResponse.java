@@ -1,6 +1,6 @@
-package com.molo.payment_api.dto.response;
+package com.molo.payment_api.payment.dto.response;
 
-import com.molo.payment_api.enums.PaymentStatus;
+import com.molo.payment_api.payment.enums.PaymentStatus;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 

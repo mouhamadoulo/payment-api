@@ -1,4 +1,4 @@
-package com.molo.payment_api.exception;
+package com.molo.payment_api.payment.exception;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

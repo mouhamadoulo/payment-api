@@ -1,6 +1,6 @@
-package com.molo.payment_api.repository;
+package com.molo.payment_api.payment.repository;
 
-import com.molo.payment_api.entity.Payment;
+import com.molo.payment_api.payment.entity.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.Optional;

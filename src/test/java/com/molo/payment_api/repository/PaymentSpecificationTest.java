@@ -1,9 +1,10 @@
 package com.molo.payment_api.repository;
 
-import com.molo.payment_api.dto.request.PaymentSearchCriteria;
-import com.molo.payment_api.entity.Payment;
-import com.molo.payment_api.enums.PaymentStatus;
-import com.molo.payment_api.specification.PaymentSpecification;
+import com.molo.payment_api.payment.dto.request.PaymentSearchCriteria;
+import com.molo.payment_api.payment.entity.Payment;
+import com.molo.payment_api.payment.enums.PaymentStatus;
+import com.molo.payment_api.payment.repository.PaymentRepository;
+import com.molo.payment_api.payment.specification.PaymentSpecification;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
